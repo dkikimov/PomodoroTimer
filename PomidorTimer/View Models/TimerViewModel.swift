@@ -41,15 +41,17 @@ class TimerViewModel: ObservableObject {
         isWorking.toggle()
     }
     
-    
     public func toggleChillingMode() {
         currentType = .chilling
         secondsLeft = TimeInterval(chillingTime)
+        timeLeftText = formatter.string(from: secondsLeft)!
+        NotificationManager.shared.showChillingStarted()
     }
     public func toggleWorkingMode() {
         currentType = .working
         secondsLeft = TimeInterval(workingTime)
         timeLeftText = formatter.string(from: secondsLeft)!
+        NotificationManager.shared.showWorkingStarted()
     }
     
     @objc private func timerAction() {
@@ -64,5 +66,14 @@ class TimerViewModel: ObservableObject {
         }
         secondsLeft -= 1
         timeLeftText = formatter.string(from: secondsLeft)!
+        
+        switch secondsLeft {
+        case TimeInterval(5*60):
+            NotificationManager.shared.showMinutesAlert(minutes: 5)
+        case TimeInterval(60):
+            NotificationManager.shared.showMinutesAlert(minutes: 1)
+        default:
+            break
+        }
     }
 }

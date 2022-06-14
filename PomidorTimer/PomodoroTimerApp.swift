@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 @main
 struct PomodoroTimerApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
@@ -24,7 +23,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     private var popover: NSPopover!
     
     private var timerVM: TimerViewModel!
-    
     @MainActor func applicationDidFinishLaunching(_ notification: Notification) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
         self.timerVM = TimerViewModel()
