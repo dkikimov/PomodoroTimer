@@ -1,6 +1,6 @@
 //
 //  TimerViewModel.swift
-//  PomidorTimer
+//  PomodoroTimer
 //
 //  Created by Даник 💪 on 09.06.2022.
 //
@@ -37,7 +37,7 @@ class TimerViewModel: ObservableObject {
     }
     
     public func toggleTimerView() {
-        toggleWorkingMode()
+        toggleWorkingMode(withNotification: false)
         isWorking.toggle()
     }
     
@@ -47,11 +47,11 @@ class TimerViewModel: ObservableObject {
         timeLeftText = formatter.string(from: secondsLeft)!
         NotificationManager.shared.showChillingStarted()
     }
-    public func toggleWorkingMode() {
+    public func toggleWorkingMode(withNotification: Bool = true) {
         currentType = .working
         secondsLeft = TimeInterval(workingTime)
         timeLeftText = formatter.string(from: secondsLeft)!
-        NotificationManager.shared.showWorkingStarted()
+        if withNotification { NotificationManager.shared.showWorkingStarted() }
     }
     
     @objc private func timerAction() {
