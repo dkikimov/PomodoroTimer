@@ -30,9 +30,3 @@ struct StartTimerView: View {
     }
 }
 
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        StartTimerView(viewModel: TimerViewModel())
-    }
-}
-

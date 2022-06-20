@@ -21,6 +21,8 @@ struct TimerView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
+            Text("Текущий этап: ") + Text(timerViewModel.currentType.rawValue).bold()
+            
             HStack {
                 if timerViewModel.isTimerPaused {
                     Button("Возобновить") {
@@ -36,9 +38,17 @@ struct TimerView: View {
                     timerViewModel.toggleTimerView()
                 }
             }
-            
+            Button("Перейти к следующему этапу") {
+                timerViewModel.changeMode(withNotification: false)
+            }
         }
         .frame(width: 300, height: 200, alignment: .center)
         
+    }
+}
+
+struct TimerView_Previews: PreviewProvider {
+    static var previews: some View {
+        TimerView(viewModel: TimerViewModel())
     }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TimerType {
-    case working
-    case chilling
+enum TimerType: String {
+    case working = "работа"
+    case chilling = "отдых"
 }

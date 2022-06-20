@@ -15,7 +15,6 @@
 		6F66BB71285F4659003CACDC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F66BB64285F4659003CACDC /* MainView.swift */; };
 		6F66BB72285F4659003CACDC /* TimerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F66BB67285F4659003CACDC /* TimerType.swift */; };
 		6F66BB73285F4659003CACDC /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F66BB69285F4659003CACDC /* TimerViewModel.swift */; };
-		6F66BB74285F4659003CACDC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F66BB6A285F4659003CACDC /* Info.plist */; };
 		6F66BB75285F4659003CACDC /* PomodoroTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F66BB6B285F4659003CACDC /* PomodoroTimerApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -175,7 +174,6 @@
 			files = (
 				6F66BB6E285F4659003CACDC /* Assets.xcassets in Resources */,
 				6F66BB6C285F4659003CACDC /* Preview Assets.xcassets in Resources */,
-				6F66BB74285F4659003CACDC /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
